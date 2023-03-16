@@ -1,5 +1,10 @@
 import { registerBlockType } from "@wordpress/blocks";
-import { RichText, useBlockProps } from "@wordpress/block-editor";
+import {
+    RichText,
+    useBlockProps,
+    InspectorControls,
+} from "@wordpress/block-editor";
+import { PanelBody } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import block from "./block.json";
 import "./main.css";
@@ -11,16 +16,25 @@ registerBlockType(block.name, {
         // console.log("🚀 ~ file: index.js:11 ~ edit ~ blockProps:", blockProps);
 
         return (
-            <div {...blockProps}>
-                <RichText
-                    className="fancy-header"
-                    tagName="h2"
-                    placeholder={__("Enter Heading", "udemy-plus")}
-                    value={content}
-                    onChange={(newVal) => setAttributes({ content: newVal })}
-                    allowedFormats={["core/bold", "core/italic"]}
-                />
-            </div>
+            <>
+                <InspectorControls>
+                    <PanelBody title={__("Colors", "udemy-plus")}>
+                        dummyy
+                    </PanelBody>
+                </InspectorControls>
+                <div {...blockProps}>
+                    <RichText
+                        className="fancy-header"
+                        tagName="h2"
+                        placeholder={__("Enter Heading", "udemy-plus")}
+                        value={content}
+                        onChange={(newVal) =>
+                            setAttributes({ content: newVal })
+                        }
+                        allowedFormats={["core/bold", "core/italic"]}
+                    />
+                </div>
+            </>
         );
     },
     save({ attributes }) {
