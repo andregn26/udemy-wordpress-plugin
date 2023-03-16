@@ -204,14 +204,27 @@ __webpack_require__.r(__webpack_exports__);
       setAttributes
     } = _ref;
     const {
-      content
+      content,
+      underline_color
     } = attributes;
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)();
     // console.log("🚀 ~ file: index.js:11 ~ edit ~ blockProps:", blockProps);
 
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Colors", "udemy-plus")
-    }, "dummyy")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
+      colors: [{
+        name: "Red",
+        color: "#f87171"
+      }, {
+        name: "Indigo",
+        color: "#818cf8"
+      }],
+      value: underline_color,
+      onChange: newVal => setAttributes({
+        underline_color: newVal
+      })
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.RichText, {
       className: "fancy-header",
       tagName: "h2",
       placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Enter Heading", "udemy-plus"),
