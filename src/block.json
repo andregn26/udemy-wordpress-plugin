@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "udemy-plus/fancy-header",
+    "title": "Fancy Header",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "Adds a header with an hover effect",
+    "keywords": ["header", "hover"],
+    "version": "1",
+    "textdomain": "udemy-plus",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "content": {
+            "type": "string"
+        },
+        "underline_color": {
+            "type": "string",
+            "default": "#f87171"
+        }
+    },
+    "style": "file:./index.css"
+}
