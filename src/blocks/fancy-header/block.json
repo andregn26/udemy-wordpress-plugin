@@ -4,7 +4,6 @@
     "name": "udemy-plus/fancy-header",
     "title": "Fancy Header",
     "category": "text",
-    "icon": "star-filled",
     "description": "Adds a header with an hover effect",
     "keywords": ["header", "underline", "hover"],
     "version": "1",
@@ -12,7 +11,9 @@
     "editorScript": "file:./index.js",
     "attributes": {
         "content": {
-            "type": "string"
+            "type": "string",
+            "source": "html",
+            "selector": "h2"
         },
         "underline_color": {
             "type": "string",
