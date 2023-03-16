@@ -6,7 +6,7 @@
     "category": "text",
     "icon": "star-filled",
     "description": "Adds a header with an hover effect",
-    "keywords": ["header", "hover"],
+    "keywords": ["header", "underline", "hover"],
     "version": "1",
     "textdomain": "udemy-plus",
     "editorScript": "file:./index.js",
