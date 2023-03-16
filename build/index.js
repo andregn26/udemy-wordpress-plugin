@@ -142,10 +142,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
-  edit() {
+  edit(_ref) {
+    let {
+      attributes,
+      setAttributes
+    } = _ref;
+    // console.log("🚀 ~ file: index.js:8 ~ edit ~ props:", props);
+    const {
+      content
+    } = attributes;
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
       tagName: "h2",
-      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enter Heading", "udemy-plus")
+      placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enter Heading", "udemy-plus"),
+      value: content,
+      onChange: newVal => setAttributes({
+        content: newVal
+      })
     });
   }
 });
