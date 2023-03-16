@@ -7,19 +7,19 @@ import "./main.css";
 registerBlockType(block.name, {
     edit({ attributes, setAttributes }) {
         const { content } = attributes;
-        const blockProps = useBlockProps({
-            className: "fancy-header",
-        });
+        const blockProps = useBlockProps();
         // console.log("🚀 ~ file: index.js:11 ~ edit ~ blockProps:", blockProps);
 
         return (
-            <RichText
-                {...blockProps}
-                tagName="h2"
-                placeholder={__("Enter Heading", "udemy-plus")}
-                value={content}
-                onChange={(newVal) => setAttributes({ content: newVal })}
-            />
+            <div {...blockProps}>
+                <RichText
+                    className="fancy-header"
+                    tagName="h2"
+                    placeholder={__("Enter Heading", "udemy-plus")}
+                    value={content}
+                    onChange={(newVal) => setAttributes({ content: newVal })}
+                />
+            </div>
         );
     },
     save({ attributes }) {
