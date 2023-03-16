@@ -12,8 +12,13 @@ import icons from "../../icons";
 registerBlockType(block.name, {
     icon: icons.primary,
     edit({ attributes, setAttributes }) {
-        const blockProps = useBlockProps();
         const { bgColor, textColor } = attributes;
+        const blockProps = useBlockProps({
+            style: {
+                "background-color": bgColor,
+                color: textColor,
+            },
+        });
 
         return (
             <>
@@ -42,7 +47,15 @@ registerBlockType(block.name, {
                         <input type="text" placeholder="Search" />
 
                         <div className="btn-wrapper">
-                            <button type="submit">Search</button>
+                            <button
+                                style={{
+                                    "background-color": bgColor,
+                                    color: textColor,
+                                }}
+                                type="submit"
+                            >
+                                Search
+                            </button>
                         </div>
                     </form>
                 </div>
