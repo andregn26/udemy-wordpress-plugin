@@ -45,21 +45,4 @@ registerBlockType(block.name, {
             </>
         );
     },
-    save({ attributes }) {
-        const { content, underline_color } = attributes;
-        const { blockProps } = useBlockProps.save({
-            className: "fancy-header",
-            style: {
-                "background-image": `linear-gradient(transparent, transparent), linear-gradient(${underline_color}, ${underline_color})`,
-            },
-        });
-        return (
-            <RichText.Content
-                {...blockProps}
-                tagName="h2"
-                value={content}
-                className="fancy-header"
-            />
-        );
-    },
 });
