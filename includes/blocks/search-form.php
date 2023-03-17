@@ -1,30 +1,30 @@
-<?php 
+<?php
 
-function up_search_form_render_cb() {
+function up_search_form_render_cb($atts)
+{
+    $bgColor = esc_attr($atts["bgColor"]);
+    $textColor = esc_attr($atts["textColor"]);
+    $styleAttr = "background-color:{$bgColor}; color:{$textColor};";
+
     ob_start();
-    ?>
-    <div {...blockProps}>
-    <h1>Search: Your search term here</h1>
-    <form>
-        <input type="text" placeholder="Search" />
+?>
+    <div style="<?php echo $styleAttr ?>" class="wp-block-udemy-plus-search-form">
 
-        <div className="btn-wrapper">
-            <button
-                style={{
-                    "background-color": bgColor,
-                    color: textColor,
-                }}
-                type="submit"
-            >
-                Search
-            </button>
-        </div>
-    </form>
-</div>
-<<?php 
+        <h1>Search: Your search term here</h1>
+        <form>
+            <input type="text" placeholder="Search" />
 
-    $output = ob_get_contents();
-    ob_end_clean();
-    
-    return $output;
-};
+            <div class="btn-wrapper">
+                <button style="<?php echo $styleAttr ?>" type="submit">
+                    Search
+                </button>
+            </div>
+        </form>
+    </div>
+    <?php
+
+        $output = ob_get_contents();
+        ob_end_clean();
+
+        return $output;
+    };
