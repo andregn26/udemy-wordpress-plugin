@@ -26,19 +26,30 @@ registerBlockType(block.name, {
 							onChange={(newValue) =>
 								setAttributes({ showCategory: newValue })
 							}
+							help={
+								showCategory
+									? __("Category Shown", "udemy-plus")
+									: __("Custom Content Shown", "udemy-plus")
+							}
 						/>
 					</PanelBody>
 				</InspectorControls>
 				<div {...blockProps}>
 					<div class="inner-page-header">
-						<RichText
-							tagName="h1"
-							placeholder={__("Enter Heading", "udemy-plus")}
-							value={content}
-							onChange={(newVal) =>
-								setAttributes({ content: newVal })
-							}
-						/>
+						{showCategory ? (
+							<h1>
+								{__("Category: Some Category", "udemy-plus")}
+							</h1>
+						) : (
+							<RichText
+								tagName="h1"
+								placeholder={__("Enter Heading", "udemy-plus")}
+								value={content}
+								onChange={(newVal) =>
+									setAttributes({ content: newVal })
+								}
+							/>
+						)}
 					</div>
 				</div>
 			</>
