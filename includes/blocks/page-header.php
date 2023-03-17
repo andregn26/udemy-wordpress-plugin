@@ -1,6 +1,6 @@
 <?php
 
-function up_search_form_render_cb()
+function up_page_header_render_cb()
 {
     
 };
