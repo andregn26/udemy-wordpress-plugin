@@ -173,7 +173,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json","apiVersion":2,"name":"udemy-plus/page-header","title":"Page Header","category":"text","description":"Adds a page header","textdomain":"udemy-plus","attributes":{"content":{"type":"string"},"showCategory":{"type":"boolean","default":"false"}},"editorScript":"file:./index.js","style":"file:./index.css"}');
+module.exports = JSON.parse('{"$schema":"https://raw.githubusercontent.com/WordPress/gutenberg/trunk/schemas/json/block.json","apiVersion":2,"name":"udemy-plus/page-header","title":"Page Header","category":"text","description":"Adds a page header","textdomain":"udemy-plus","attributes":{"content":{"type":"string","default":""},"showCategory":{"type":"boolean","default":"false"}},"editorScript":"file:./index.js","style":"file:./index.css"}');
 
 /***/ })
 
