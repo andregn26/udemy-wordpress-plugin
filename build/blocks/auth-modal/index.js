@@ -105,10 +105,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/header-tools/main.css":
-/*!******************************************!*\
-  !*** ./src/blocks/header-tools/main.css ***!
-  \******************************************/
+/***/ "./src/blocks/auth-modal/main.css":
+/*!****************************************!*\
+  !*** ./src/blocks/auth-modal/main.css ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -238,9 +238,9 @@ module.exports = window["wp"]["i18n"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!******************************************!*\
-  !*** ./src/blocks/header-tools/index.js ***!
-  \******************************************/
+/*!****************************************!*\
+  !*** ./src/blocks/auth-modal/index.js ***!
+  \****************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -253,7 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _icons_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../icons.js */ "./src/icons.js");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main.css */ "./src/blocks/header-tools/main.css");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main.css */ "./src/blocks/auth-modal/main.css");
 
 
 
@@ -261,7 +261,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)("udemy-plus/header-tools", {
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.registerBlockType)("udemy-plus/auth-modal", {
   icon: {
     src: _icons_js__WEBPACK_IMPORTED_MODULE_5__["default"].primary
   },
@@ -271,41 +271,19 @@ __webpack_require__.r(__webpack_exports__);
       setAttributes
     } = _ref;
     const {
-      showAuth
+      showRegister
     } = attributes;
     const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("General", "udemy-plus")
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Show Login/Register Link", "udemy-plus"),
-      value: showAuth,
-      options: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("No", "udemy-plus"),
-        value: false
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Yes", "udemy-plus"),
-        value: true
-      }],
-      onChange: newValue => setAttributes({
-        showAuth: newValue === "true"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Show Register", "udemy-plus"),
+      help: showRegister ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Showing Registration Form", "udemy-plus") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Hiding Registration Form", "udemy-plus"),
+      checked: showRegister,
+      onChange: showRegister => setAttributes({
+        showRegister
       })
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.CheckboxControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Show Login/Register Link", "udemy-plus"),
-      help: showAuth ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Showing Link", "udemy-plus") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Hiding Link", "udemy-plus"),
-      checked: showAuth,
-      onChange: newValue => setAttributes({
-        showAuth: newValue
-      })
-    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, showAuth && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
-      className: "signin-link open-modal",
-      href: "#"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "signin-icon"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      className: "bi bi-person-circle"
-    })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "signin-text"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("small", null, "Hello, Sign in"), "My Account"))));
+    }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("This block is not previewable from the editor. View your site for a live demo.", "udemy-plus")));
   }
 });
 })();
