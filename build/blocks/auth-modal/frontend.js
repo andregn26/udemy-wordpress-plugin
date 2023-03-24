@@ -39,6 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  signupForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const signupFieldset = signupForm.querySelector("fieldset");
+    signupFieldset.setAttribute("disabled", true);
+    const signupStatus = signupForm.querySelector("#signup-status");
+    signupStatus.innerHTML = `<div class = "modal-status modal-status-info">Please Wait. We're creating your account</div>`;
+  });
 });
 /******/ })()
 ;
