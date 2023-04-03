@@ -43,7 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
+<<<<<<< HEAD
 	signinForm.addEventListener("submit", async (event) => {
+=======
+	signupForm.addEventListener("submit", async (event) => {
+>>>>>>> dbb81263c4e200feb306b6117de4ec89e88ffce0
 		event.preventDefault();
 
 		const signupFieldset = signupForm.querySelector("fieldset");
@@ -66,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			body: JSON.stringify(formData),
 		});
 
+<<<<<<< HEAD
 		const responseJSON = response.json();
 
 		if (responseJSON.status === 2) {
@@ -107,6 +112,30 @@ document.addEventListener("DOMContentLoaded", () => {
 		} else {
 			signinFieldset.removeAttribute("disabled");
 			signinStatus.innerHTML = `<div class="modal-status modal-status-danger">Unable to log in!</div>`;
+=======
+		const responseJSON = await response.json();
+
+		if (responseJSON.status === 2) {
+			signupStatus.innerHTML = `<div class="modal-status modal-status-success">
+			Success! Your account has been created. 
+			</div>`;
+			location.reload();
+		} else {
+			signupFieldset.removeAttribute("disabled");
+			signupStatus.innerHTML = `<div class="modal-status modal-status-danger">
+			Unable to create account! Please try again later. 
+			</div>`;
+>>>>>>> dbb81263c4e200feb306b6117de4ec89e88ffce0
 		}
 	});
+
+	// signinForm.addEventListener("submit", async (event) => {
+	// 	event.preventDefault();
+
+	// 	const signinFieldSet = signinForm.querySelector("fieldset");
+	// 	const signinStatus = signinForm.querySelector("#signin-status");
+
+	// 	signinFieldSet.setAttribute("disabled", true);
+	// 	signinStatus.innerHTML = ``;
+	// });
 });

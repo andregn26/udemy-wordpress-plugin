@@ -1,98 +1,25 @@
 /******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blocks/auth-modal/frontend.js":
 /*!*******************************************!*\
   !*** ./src/blocks/auth-modal/frontend.js ***!
   \*******************************************/
-document.addEventListener("DOMContentLoaded", () => {
-  const openModalBtn = document.querySelectorAll(".open-modal");
-  const modalEl = document.querySelector(".wp-block-udemy-plus-auth-modal");
-  const modalCloseEl = document.querySelectorAll(".modal-overlay, .modal-btn-close");
-  openModalBtn.forEach(element => {
-    element.addEventListener("click", event => {
-      event.preventDefault();
-      modalEl.classList.add("modal-show");
-    });
-  });
-  modalCloseEl.forEach(element => {
-    element.addEventListener("click", event => {
-      event.preventDefault();
-      modalEl.classList.remove("modal-show");
-    });
-  });
-  const tabs = document.querySelectorAll(".tabs a");
-  const signinForm = document.querySelector("#signin-tab");
-  const signupForm = document.querySelector("#signup-tab");
-  tabs.forEach(tab => {
-    tab.addEventListener("click", event => {
-      event.preventDefault();
-      tabs.forEach(currentTab => {
-        currentTab.classList.remove("active-tab");
-      });
-      event.currentTarget.classList.add("active-tab");
-      const activeTab = event.currentTarget.getAttribute("href");
-      if (activeTab === "#signin-tab") {
-        signinForm.style.display = "block";
-        signupForm.style.display = "none";
-      } else {
-        signinForm.style.display = "none";
-        signupForm.style.display = "block";
-      }
-    });
-  });
-  signinForm.addEventListener("submit", async event => {
-    event.preventDefault();
-    const signupFieldset = signupForm.querySelector("fieldset");
-    signupFieldset.setAttribute("disabled", true);
-    const signupStatus = signupForm.querySelector("#signup-status");
-    signupStatus.innerHTML = `<div class = "modal-status modal-status-info">Please Wait. We're creating your account</div>`;
-    const formData = {
-      username: signupForm.querySelector("#su-name").value,
-      email: signupForm.querySelector("#su-email").value,
-      password: signupForm.querySelector("#su-password").value
-    };
-    const response = await fetch(up_auth_rest.signup, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
-    const responseJSON = response.json();
-    if (responseJSON.status === 2) {
-      signupStatus.innerHTML = `<div class="modal-status modal-status-success">Success! You're account has been created.</div>`;
-      location.reload();
-    } else {
-      signupFieldset.removeAttribute("disabled");
-      signupStatus.innerHTML = `<div class="modal-status modal-status-danger">Unable to create account!</div>`;
-    }
-  });
-  signinForm.addEventListener("submit", async event => {
-    event.preventDefault();
-    const signinFieldset = signinForm.querySelector("fieldset");
-    signinFieldset.setAttribute("disabled", true);
-    const signinStatus = signinForm.querySelector("#signin-status");
-    signinStatus.innerHTML = `<div class = "modal-status modal-status-info">Please Wait. We're logging you in.</div>`;
-    const formData = {
-      user_login: signinForm.querySelector("#si-email").value,
-      password: signinForm.querySelector("#si-password").value
-    };
-    const response = await fetch(up_auth_rest.signin, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
-    const responseJSON = response.json();
-    if (responseJSON.status === 2) {
-      signinStatus.innerHTML = `<div class="modal-status modal-status-success">Success! You're logged in.</div>`;
-      location.reload();
-    } else {
-      signinFieldset.removeAttribute("disabled");
-      signinStatus.innerHTML = `<div class="modal-status modal-status-danger">Unable to log in!</div>`;
-    }
-  });
-});
+/***/ (() => {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\src\\blocks\\auth-modal\\frontend.js: Unexpected token (46:1)\n\n\u001b[0m \u001b[90m 44 |\u001b[39m \t})\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 45 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 46 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 47 |\u001b[39m \tsigninForm\u001b[33m.\u001b[39maddEventListener(\u001b[32m\"submit\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m (event) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 48 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 49 |\u001b[39m \tsignupForm\u001b[33m.\u001b[39maddEventListener(\u001b[32m\"submit\"\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m (event) \u001b[33m=>\u001b[39m {\u001b[0m\n    at instantiate (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:653:32)\n    at constructor (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:947:12)\n    at JSXParserMixin.raise (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:3261:19)\n    at JSXParserMixin.unexpected (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:3291:16)\n    at JSXParserMixin.jsxParseIdentifier (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6791:12)\n    at JSXParserMixin.jsxParseNamespacedName (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6798:23)\n    at JSXParserMixin.jsxParseElementName (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6807:21)\n    at JSXParserMixin.jsxParseOpeningElementAt (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6887:22)\n    at JSXParserMixin.jsxParseElementAt (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6912:33)\n    at JSXParserMixin.jsxParseElement (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6981:17)\n    at JSXParserMixin.parseExprAtom (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6993:19)\n    at JSXParserMixin.parseExprSubscripts (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10870:23)\n    at JSXParserMixin.parseUpdate (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10853:21)\n    at JSXParserMixin.parseMaybeUnary (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10829:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10667:61)\n    at JSXParserMixin.parseExprOps (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10672:23)\n    at JSXParserMixin.parseMaybeConditional (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10649:23)\n    at JSXParserMixin.parseMaybeAssign (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10610:21)\n    at JSXParserMixin.parseExpressionBase (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10564:23)\n    at C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10560:39\n    at JSXParserMixin.allowInAnd (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:12250:16)\n    at JSXParserMixin.parseExpression (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10560:17)\n    at JSXParserMixin.parseStatementContent (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:12678:23)\n    at JSXParserMixin.parseStatementLike (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:12544:17)\n    at JSXParserMixin.parseStatementListItem (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:12524:17)\n    at JSXParserMixin.parseBlockOrModuleBlockBody (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:13116:61)\n    at JSXParserMixin.parseBlockBody (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:13109:10)\n    at JSXParserMixin.parseBlock (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:13097:10)\n    at JSXParserMixin.parseFunctionBody (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:11922:24)\n    at JSXParserMixin.parseArrowExpression (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:11897:10)\n    at JSXParserMixin.parseParenAndDistinguishExpression (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:11500:12)\n    at JSXParserMixin.parseExprAtom (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:11139:23)\n    at JSXParserMixin.parseExprAtom (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:6998:20)\n    at JSXParserMixin.parseExprSubscripts (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10870:23)\n    at JSXParserMixin.parseUpdate (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10853:21)\n    at JSXParserMixin.parseMaybeUnary (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10829:23)\n    at JSXParserMixin.parseMaybeUnaryOrPrivate (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10667:61)\n    at JSXParserMixin.parseExprOps (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10672:23)\n    at JSXParserMixin.parseMaybeConditional (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10649:23)\n    at JSXParserMixin.parseMaybeAssign (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10610:21)\n    at C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10580:39\n    at JSXParserMixin.allowInAnd (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:12255:12)\n    at JSXParserMixin.parseMaybeAssignAllowIn (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10580:17)\n    at JSXParserMixin.parseExprListItem (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:12007:18)\n    at JSXParserMixin.parseCallExpressionArguments (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:11062:22)\n    at JSXParserMixin.parseCoverCallAndAsyncArrowHead (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10977:29)\n    at JSXParserMixin.parseSubscript (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10912:19)\n    at JSXParserMixin.parseSubscripts (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10883:19)\n    at JSXParserMixin.parseExprSubscripts (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10874:17)\n    at JSXParserMixin.parseUpdate (C:\\Users\\andre.gregorio\\Local Sites\\udemy\\app\\public\\wp-content\\plugins\\udemy-plus\\node_modules\\@babel\\parser\\lib\\index.js:10853:21)");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module doesn't tell about it's top-level declarations so it can't be inlined
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/blocks/auth-modal/frontend.js"]();
+/******/ 	
 /******/ })()
 ;
 //# sourceMappingURL=frontend.js.map

@@ -37,7 +37,7 @@ function up_rest_api_signup_handler($request)
     wp_set_current_user($userID);
     wp_set_auth_cookie($userID);
 
-$user = get_user_by("id", $userID);
+    $user = get_user_by("id", $userID);
 
     do_action("wp_login", $user->user_login, $user);
 
