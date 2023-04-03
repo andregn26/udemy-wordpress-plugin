@@ -2,6 +2,10 @@
 
 function up_auth_modal_cb($atts)
 {
+
+    if (is_user_logged_in()) {
+        return "";
+    }
     ob_start();
 ?>
     <div class="wp-block-udemy-plus-auth-modal">

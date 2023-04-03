@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * Plugin Name:       Udemy Plus
  * Plugin URI:        https://udemy.com
@@ -12,24 +12,28 @@
  * Domain Path:       /languages
  */
 
- if(!function_exists("add_action")) {
-    echo "Seems like you stumbled here by accident";
-    exit;
- }
+if (!function_exists("add_action")) {
+  echo "Seems like you stumbled here by accident";
+  exit;
+}
 
- //Setup
+//Setup
 define("UP_PLUGIN_DIR", plugin_dir_path(__FILE__));
 
- //Includes
- $rootFiles = glob(UP_PLUGIN_DIR . "includes/*.php");
- $subDirectoryFiles = glob(UP_PLUGIN_DIR . "includes/**/*.php");
- $allFiles = array_merge($rootFiles, $subDirectoryFiles);
+//Includes
+$rootFiles = glob(UP_PLUGIN_DIR . "includes/*.php");
+$subDirectoryFiles = glob(UP_PLUGIN_DIR . "includes/**/*.php");
+$allFiles = array_merge($rootFiles, $subDirectoryFiles);
 
- foreach($allFiles as $filename) {
-   include_once($filename);
- }
+foreach ($allFiles as $filename) {
+  include_once($filename);
+}
 
 
- //Hooks
- add_action("init", "up_register_blocks");
- add_action("rest_api_init", "up_rest_api_init");
+//Hooks
+register_activation_hook(__FILE__, "up_activate_plugin");
+add_action("init", "up_register_blocks");
+add_action("rest_api_init", "up_rest_api_init");
+add_action("wp_enqueue_scripts", "up_enqueue_scripts");
+add_action("init", "up_recipe_post_type");
+add_action("cuisine_add_form_fields", "up_cuisine_add_form_fields");

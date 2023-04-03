@@ -9,7 +9,7 @@
 	"attributes": {
 		"showAuth": {
 			"type": "boolean",
-			"default": "true"
+			"default": true
 		}
 	},
 	"editorScript": "file:./index.js",
