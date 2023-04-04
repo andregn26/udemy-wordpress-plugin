@@ -6,15 +6,7 @@ function up_rest_api_signin_handler($request)
 
     $params = $request->get_json_params();
 
-<<<<<<< HEAD
     if (!isset($params["user_login"], $params["password"]) || empty($params["user_login"]) || empty($params["password"])) {
-=======
-    if (
-        !isset($params["user_login"], $params["password"]) ||
-        empty($params["user_login"]) ||
-        empty($params["password"])
-    ) {
->>>>>>> dbb81263c4e200feb306b6117de4ec89e88ffce0
         return $response;
     }
 
