@@ -76,5 +76,11 @@ div.wp-block-udemy-plus-recipe-summary {
 	margin: 0 auto;
 }
 
+.MuiRating-icon {
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+}
+
 
 /*# sourceMappingURL=index.css.map*/
