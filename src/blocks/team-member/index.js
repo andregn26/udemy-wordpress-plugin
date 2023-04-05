@@ -38,6 +38,7 @@ registerBlockType("udemy-plus/team-member", {
 				<div {...blockProps}>
 					<div className="author-meta">
 						{imgURL && <img src={imgURL} alt={imgAlt} />}
+						{imgURL && <img src={imgURL} alt={imgAlt} />}
 						<MediaPlaceholder
 							acceptedTypes={["image"]}
 							accept={"image/*"}

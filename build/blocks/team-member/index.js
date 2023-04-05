@@ -307,6 +307,9 @@ __webpack_require__.r(__webpack_exports__);
     }, imgURL && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: imgURL,
       alt: imgAlt
+    }), imgURL && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+      src: imgURL,
+      alt: imgAlt
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
       acceptedTypes: ["image"],
       accept: "image/*",
